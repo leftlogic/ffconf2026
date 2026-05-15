@@ -16,46 +16,532 @@
     <meta property="og:description" content="FFConf - the UK's best JavaScript and Web conference in Brighton.">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="FFConf">
+
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-        text-align: center;
-        font-size: 24px;
-        font-size: 3vw;
-        color: black;
-        line-height: 2;
+      @font-face {
+        font-family: 'Barriecito';
+        src: url('fonts/Barriecito,Bayon,Special_Gothic_Condensed_One/Barriecito/Barriecito-Regular.ttf') format('truetype');
+        font-weight: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Bayon';
+        src: url('fonts/Barriecito,Bayon,Special_Gothic_Condensed_One/Bayon/Bayon-Regular.ttf') format('truetype');
+        font-weight: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Special Gothic Condensed One';
+        src: url('fonts/Barriecito,Bayon,Special_Gothic_Condensed_One/Special_Gothic_Condensed_One/SpecialGothicCondensedOne-Regular.ttf') format('truetype');
+        font-weight: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Blackout Two AM';
+        src: url('fonts/blackout-master/webfonts/blackout_two_am-webfont.woff') format('woff'),
+             url('fonts/blackout-master/webfonts/blackout_two_am-webfont.ttf') format('truetype');
+        font-weight: normal;
+        font-display: swap;
       }
 
-      svg {
-        width: 40vh;
+      :root {
+        --black: #000;
+        --white: #fff;
+        --inner: 329px;
+        --pad: 32px;
+        --font-display: 'Barriecito', cursive;
+        --font-body: 'Bayon', sans-serif;
+        --font-label: 'Blackout Two AM', sans-serif;
+        --font-bio: 'Special Gothic Condensed One', sans-serif;
+      }
+
+      *, *::before, *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
       }
 
       html {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
+        background: var(--black);
       }
 
       body {
+        background-color: var(--black);
+        background-image: url('images/bg.png');
+        background-repeat: repeat;
+        background-size: auto;
+        color: var(--white);
+        font-family: var(--font-body);
+        max-width: 393px;
+        margin: 0 auto;
+        overflow-x: hidden;
+      }
+
+      .inner {
+        max-width: var(--inner);
+        margin: 0 auto;
+        padding: 0 var(--pad);
+      }
+
+      .section-title {
+        font-family: var(--font-display);
+        font-size: clamp(56px, 18vw, 72px);
+        font-weight: normal;
+        line-height: 1;
+        margin-bottom: 40px;
+      }
+
+      /* ========================
+         HERO — black portion
+         ======================== */
+
+      .hero-black {
+        padding: 48px 0 40px;
+        text-align: center;
+      }
+
+      .hero-headline {
+        font-size: clamp(56px, 18vw, 72px);
+        font-weight: normal;
+        line-height: 1;
+        color: var(--white);
+        margin-bottom: 32px;
+      }
+
+      .hero-headline .ffconf {
+        font-family: var(--font-label);
+        text-transform: uppercase;
+        display: block;
+      }
+
+      .hero-headline .date {
+        font-family: var(--font-display);
+        text-transform: uppercase;
+        display: block;
+      }
+
+      /* CTA buttons — stacked, 299px centered */
+      .hero-ctas {
+        max-width: 299px;
+        margin: 0 auto 32px;
+      }
+
+      .hero-ctas a {
+        transform: rotate(-2deg);
+        transform-origin: center;
+      }
+
+      .btn-buy {
+        display: block;
+        width: 100%;
+        font-family: var(--font-body);
+        font-size: 40px;
+        text-decoration: none;
+        padding: 16px 32px;
+        background: var(--white);
+        color: var(--black);
+        text-align: center;
+        line-height: 1;
+        white-space: nowrap;
+        margin-bottom: 12px;
+      }
+
+      .btn-buy .alt {
+        font-family: var(--font-display);
+      }
+
+      .btn-price {
+        display: block;
+        width: 100%;
+        font-family: var(--font-body);
+        font-size: 40px;
+        text-decoration: none;
+        padding: 12px 32px;
+        background: transparent;
+        color: var(--white);
+        text-align: center;
+        line-height: 1;
+        white-space: nowrap;
+        border: 4px solid var(--white);
+      }
+
+      .btn-price .alt {
+        font-family: var(--font-display);
+      }
+
+      .hero-keyinfo {
+        font-family: var(--font-body);
+        font-size: 26px;
+        line-height: 1.5;
+        color: var(--white);
+        max-width: var(--inner);
+        margin: 0 auto;
+        padding: 0 var(--pad);
+        text-align: justify;
+      }
+
+      /* Section dividers */
+      .section-divider {
+        font-family: var(--font-label);
+        font-size: 48px;
+        color: var(--white);
+        white-space: nowrap;
+        overflow: hidden;
+        line-height: 1;
+        padding: 0 var(--pad);
+        max-width: var(--inner);
         margin: 0 auto;
       }
 
-      a {
-        background: black;
-        color: white;
-        text-decoration: none;
-        padding: 2px 4px;
+      /* ========================
+         HERO — white band
+         ======================== */
+
+      .hero-white {
+        background: var(--white);
+        color: var(--black);
+        padding: 40px 0;
       }
 
-      a:hover {
-        background: white;
-        border: 2px solid black;
-        color: black;
+      .hero-description {
+        font-family: var(--font-bio);
+        font-size: 26px;
+        line-height: 1.5;
+        margin-bottom: 48px;
+        text-align: center;
+      }
+
+      .hero-description .hl {
+        font-family: var(--font-display);
+      }
+
+      .newsletter {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .newsletter input,
+      .newsletter button {
+        font-family: var(--font-body);
+        font-size: 24px;
+        padding: 16px var(--pad);
+        width: 100%;
+        border: none;
+        border-top: 1.5px solid var(--black);
+        background: transparent;
+        color: var(--black);
+        appearance: none;
+        -webkit-appearance: none;
+        border-radius: 0;
+        text-align: left;
+      }
+
+      .newsletter button {
+        background: var(--black);
+        color: var(--white);
+        cursor: pointer;
+        text-align: center;
+      }
+
+      .newsletter button .alt {
+        font-family: var(--font-display);
+      }
+
+      /* ========================
+         SCHEDULE
+         ======================== */
+
+      #schedule {
+        padding: 72px 0;
+      }
+
+      .schedule-group {
+        margin-bottom: 40px;
+      }
+
+      .schedule-group-title {
+        font-family: var(--font-body);
+        font-size: 40px;
+        font-weight: normal;
+        margin-bottom: 8px;
+      }
+
+      .schedule-list {
+        list-style: none;
+      }
+
+      .schedule-list li {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        font-family: var(--font-body);
+        font-size: 20px;
+        padding: 10px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.25);
+      }
+
+      .schedule-list li:last-child {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+      }
+
+      .schedule-time {
+        white-space: nowrap;
+        font-size: 16px;
+        opacity: 0.7;
+        padding-left: 8px;
+      }
+
+      /* ========================
+         SPEAKERS
+         ======================== */
+
+      #speakers {
+        background: var(--white);
+        color: var(--black);
+        padding: 72px 0;
+      }
+
+      .speaker-card {
+        position: relative;
+        margin-bottom: 8px;
+      }
+
+      /* The top portion of the card: name + headshot float upper-right */
+      .speaker-card-header {
+        position: relative;
+        min-height: 140px;
+        margin-bottom: 16px;
+      }
+
+      .speaker-headshot {
+        position: absolute;
+        top: -16px;
+        right: -8px;
+        width: 160px;
+        height: 160px;
+        object-fit: contain;
+        object-position: bottom;
+      }
+
+      .speaker-name {
+        font-family: var(--font-body);
+        font-size: 24px;
+        font-weight: normal;
+        padding-top: 4px;
+        /* keep text left of the headshot */
+        max-width: 55%;
+      }
+
+      .speaker-title {
+        font-family: var(--font-body);
+        font-size: 40px;
+        font-weight: normal;
+        line-height: 1.2;
+        margin-bottom: 16px;
+      }
+
+      .speaker-bio {
+        font-family: var(--font-bio);
+        font-size: 20px;
+        line-height: 1.5;
+        margin-bottom: 16px;
+      }
+
+      .speaker-socials {
+        font-family: var(--font-label);
+        font-size: clamp(18px, 5.5vw, 24px);
+        display: flex;
+        justify-content: space-between;
+        gap: clamp(8px, 4vw, 16px);
+        align-items: center;
+        margin-bottom: 4px;
+      }
+
+      .speaker-socials a {
+        color: var(--black);
+        text-decoration: none;
+      }
+
+      .speaker-separator {
+        font-family: var(--font-bio);
+        font-size: 24px;
+        overflow: hidden;
+        white-space: nowrap;
+        margin: 24px 0;
+        opacity: 0.35;
+      }
+
+      .speakers-cta {
+        text-align: center;
+        margin-top: 56px;
+      }
+
+      /* ========================
+         SECTION TRANSITION
+         ======================== */
+
+      .section-transition {
+        display: block;
+        line-height: 0;
+      }
+
+      .section-transition img {
+        width: 100%;
+        display: block;
+      }
+
+      /* ========================
+         LOCATIONS
+         ======================== */
+
+      #locations {
+        padding: 72px 0;
+      }
+
+      .location-group {
+        margin-bottom: 40px;
+      }
+
+      .location-group-title {
+        font-family: var(--font-body);
+        font-size: 40px;
+        font-weight: normal;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+      }
+
+      .location-list {
+        list-style: none;
+      }
+
+      .location-list li {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        font-family: var(--font-body);
+        font-size: 20px;
+        padding: 10px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.25);
+        gap: 8px;
+      }
+
+      .location-list li:last-child {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+      }
+
+      .location-tag {
+        font-family: var(--font-label);
+        font-size: 14px;
+        white-space: nowrap;
+        opacity: 0.8;
+        flex-shrink: 0;
+      }
+
+      .locations-cta {
+        text-align: center;
+        margin-top: 56px;
+      }
+
+      /* ========================
+         SPONSORS
+         ======================== */
+
+      #sponsors {
+        background: var(--white);
+        color: var(--black);
+        padding: 72px 0;
+      }
+
+      .sponsor-intro {
+        font-family: var(--font-body);
+        font-size: 20px;
+        line-height: 1.6;
+        margin-bottom: 48px;
+      }
+
+      .sponsor-category {
+        margin-bottom: 32px;
+      }
+
+      .sponsor-category-label {
+        font-family: var(--font-label);
+        font-size: 24px;
+        margin-bottom: 8px;
+      }
+
+      .sponsor-logo {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      .sponsors-cta {
+        text-align: center;
+        margin-top: 48px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        align-items: center;
+      }
+
+      /* ========================
+         SHARED BUTTON STYLES
+         ======================== */
+
+      .btn-outline-dark {
+        display: inline-block;
+        font-family: var(--font-body);
+        font-size: 24px;
+        text-decoration: none;
+        padding: 14px 28px;
+        border: 2px solid var(--black);
+        color: var(--black);
+        line-height: 1;
+      }
+
+      .btn-outline-light {
+        display: inline-block;
+        font-family: var(--font-body);
+        font-size: 24px;
+        text-decoration: none;
+        padding: 14px 28px;
+        border: 2px solid var(--white);
+        color: var(--white);
+        line-height: 1;
+      }
+
+      .btn-outline-dark .alt,
+      .btn-outline-light .alt {
+        font-family: var(--font-display);
+      }
+
+      /* ========================
+         FOOTER
+         ======================== */
+
+      footer {
+        padding: 56px 0 48px;
+        text-align: center;
+      }
+
+      footer nav {
+        display: flex;
+        flex-direction: column;
+      }
+
+      footer nav a {
+        font-family: var(--font-body);
+        font-size: 26px;
+        color: var(--white);
+        text-decoration: none;
+        line-height: 1.7;
+      }
+
+      footer nav a:hover {
+        text-decoration: underline;
       }
     </style>
+
     <!-- Privacy-friendly analytics by Plausible -->
     <script async src="https://plausible.io/js/pa-WmoCfDvEQaL_Xa2ZNV7h-.js"></script>
     <script>
@@ -65,23 +551,275 @@
   </head>
 
   <body>
-    <h1>
-      <svg alt="ffconf" title="FFConf" viewBox="0 0 496 495" xmlns="http://www.w3.org/2000/svg">
-        <g fill="none" fill-rule="evenodd">
-          <path
-            d="M218.3 491.5c33.6-8 78.6-31.8 139.7-73.5 38-26 48.1-34.1 72-57.1 43.4-42 62.3-82.8 65.7-142.6 3.3-61.8-18.2-116.1-59-149.2C384.7 26.9 279.9-.3 170.4 0c0 0-51.5.8-70.9 5.7-66.2 16.5-94.4 52.5-99 126-5 80.7 33.6 216.8 82.2 291 6.2 9.3 19.4 25.1 29.2 35.2 33.4 33.4 64.7 43.2 106.4 33.6z"
-            fill="#000" />
-          <path
-            d="M160.3 283.4V229H124v-33.7h36.3v-9.6c0-33.6 24.9-57.7 59.6-57.7 19.5 0 18.2 1.3 19.1 2.6 0 9.9-4.5 31.8-4.5 31.8h-13.3c-15.5 1.6-22 8.3-22 22.8v10.1h54.4v-13.7c0-28.2 27-52.3 57.3-52.3 11 0 20.5.5 21.3 1.3.8.8.2 8-1.3 16.3l-2.6 14.8h-11.2c-15.2 0-24.3 7.7-26.4 22.7l-1.6 11H334V229h-44V337.7h-36.4V229h-54.4l-.5 53.8-.8 53.6-18.7.8-18.9.8v-54.6z"
-            fill="#FFF" />
-        </g>
-      </svg>
-    </h1>
-    <h2>FFConf 2026</h2>
-    <h3>13 November 2026</h3>
-    <p class="links"><a href="https://ffconf.org/cfp">Call for papers open</a>
-    <p><a href="https://ffconf.org/news">Get the latest news here</a></p>
-    <p>Speakers and web site coming soon.</p>
+
+    <!-- ==================== HERO ==================== -->
+    <header>
+
+      <!-- Black section: headline, CTA buttons, key info -->
+      <div class="hero-black">
+        <div class="inner">
+          <p class="hero-headline"><span class="ffconf">ffconf</span><span class="date">13 nov 2026</span></p>
+        </div>
+
+        <div class="hero-ctas">
+          <a href="https://ffconf.org/tickets" class="btn-buy">BUY <span class="alt">tickets</span></a>
+          <a href="https://ffconf.org/tickets" class="btn-price"><span class="alt">£249</span> +VAT</a>
+        </div>
+
+        <p class="hero-keyinfo"><u>duke of yorks cinema</u>&nbsp;• located in brighton uk&nbsp;• eight amazing talks&nbsp;• all day conference 9am to 6pm&nbsp;• <u>inclusion scholarship programme</u>&nbsp;• <u>after party</u> to socialise &amp; play</p>
+      </div>
+
+      <!-- White band: description + newsletter form -->
+      <div class="hero-white">
+        <div class="inner">
+          <p class="hero-description"><span class="hl">A full day of eight</span> carefully curated sessions for an <span class="hl">audience that cares</span> about the <span class="hl">future of the web</span>, and who want their i<span class="hl">deas</span> challenged.</p>
+          <form class="newsletter" action="#" method="post">
+            <input type="email" name="email" placeholder="Email address" autocomplete="email">
+            <input type="text" name="name" placeholder="Name" autocomplete="name">
+            <button type="submit"><span class="alt">notify</span> me</button>
+          </form>
+        </div>
+      </div>
+
+    </header>
+
+    <!-- ==================== SCHEDULE ==================== -->
+    <section id="schedule">
+      <div class="inner">
+        <h2 class="section-title">schedule</h2>
+
+        <div class="schedule-group">
+          <h3 class="schedule-group-title">KEY EVENTS</h3>
+          <ul class="schedule-list">
+            <li><span>Registration</span><span class="schedule-time">09:00 – 09:35</span></li>
+            <li><span>Opening Remarks</span><span class="schedule-time">09:35 – 09:50</span></li>
+            <li><span>Coffee Break</span><span class="schedule-time">11:10 – 11:40</span></li>
+            <li><span>Lunch</span><span class="schedule-time">13:00 – 14:30</span></li>
+            <li><span>Ice Cream Break</span><span class="schedule-time">15:50 – 16:15</span></li>
+            <li><span>Closing Remarks</span><span class="schedule-time">17:35 – 17:50</span></li>
+            <li><span>After Party</span><span class="schedule-time">18:00 – 00:00</span></li>
+          </ul>
+        </div>
+
+        <div class="schedule-group">
+          <h3 class="schedule-group-title">speaker TALKS</h3>
+          <ul class="schedule-list">
+            <li><span>Hellen Ward</span><span class="schedule-time">09:50 – 10:30</span></li>
+            <li><span>Chetan Padia</span><span class="schedule-time">10:30 – 11:10</span></li>
+            <li><span>Hannah Clarke</span><span class="schedule-time">11:40 – 12:20</span></li>
+            <li><span>Sergès Goma</span><span class="schedule-time">12:20 – 13:00</span></li>
+            <li><span>Asim Hussain</span><span class="schedule-time">14:30 – 15:10</span></li>
+            <li><span>Jessica Rose &amp; Eda Eren</span><span class="schedule-time">15:10 – 15:50</span></li>
+            <li><span>Surya Rose</span><span class="schedule-time">16:15 – 16:55</span></li>
+            <li><span>Sacha Jud</span><span class="schedule-time">16:55 – 17:35</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider" aria-hidden="true">––––––––––––––––––––––</div>
+
+    <!-- ==================== SPEAKERS ==================== -->
+    <section id="speakers">
+      <div class="inner">
+        <h2 class="section-title">SPEAKERS</h2>
+
+        <!-- Hellen Ward -->
+        <article class="speaker-card">
+          <div class="speaker-card-header">
+            <img class="speaker-headshot" src="images/headshot-Speaker=One.png" alt="Hellen Ward">
+            <p class="speaker-name">Hellen Ward</p>
+          </div>
+          <h3 class="speaker-title">Bias in our products: The case for diversity in tech</h3>
+          <p class="speaker-bio">How do you build Design System component packages to keep everyone happy regardless of framework? It's not easy (and let's be honest, React die-hards will only be happy with pure React), but we're getting there using web components and Stencil. Spent my teenage years learning HTML and CSS for my MySpace profile (my falling stars were next level). Never considered web development when I went to study politics, then glaciology (obviously…), followed by a career running social inclusion projects. But these days I'm a UI Engineer. Full circle.</p>
+          <div class="speaker-socials">
+            <a href="#">BLUESKY</a>
+            <a href="#">medium</a>
+            <a href="#">linkedin</a>
+          </div>
+        </article>
+        <p class="speaker-separator">............................................................</p>
+
+        <!-- Chetan Padia -->
+        <article class="speaker-card">
+          <div class="speaker-card-header">
+            <img class="speaker-headshot" src="images/headshot-Speaker=Two.png" alt="Chetan Padia">
+            <p class="speaker-name">Chetan Padia</p>
+          </div>
+          <h3 class="speaker-title">Powerless by Design</h3>
+        </article>
+        <p class="speaker-separator">............................................................</p>
+
+        <!-- Hannah Clarke -->
+        <article class="speaker-card">
+          <div class="speaker-card-header">
+            <img class="speaker-headshot" src="images/headshot-Speaker=Three.png" alt="Hannah Clarke">
+            <p class="speaker-name">Hannah Clarke</p>
+          </div>
+          <h3 class="speaker-title">An Uncomfortable Place</h3>
+        </article>
+        <p class="speaker-separator">............................................................</p>
+
+        <!-- Sergès Goma — no headshot variant in Figma -->
+        <article class="speaker-card">
+          <div class="speaker-card-header">
+            <p class="speaker-name">Sergès Goma</p>
+          </div>
+          <h3 class="speaker-title">don't be an idiot</h3>
+        </article>
+        <p class="speaker-separator">............................................................</p>
+
+        <!-- Asim Hussain -->
+        <article class="speaker-card">
+          <div class="speaker-card-header">
+            <img class="speaker-headshot" src="images/headshot-Speaker=Five.png" alt="Asim Hussain">
+            <p class="speaker-name">Asim Hussain</p>
+          </div>
+          <h3 class="speaker-title">Forgetting Machines: AI Coding Tools and Skill</h3>
+        </article>
+        <p class="speaker-separator">............................................................</p>
+
+        <!-- Jessica Rose & Eda Eren -->
+        <article class="speaker-card">
+          <div class="speaker-card-header">
+            <img class="speaker-headshot" src="images/headshot-Speaker=Six.png" alt="Jessica Rose &amp; Eda Eren">
+            <p class="speaker-name">Jessica Rose &amp; Eda Eren</p>
+          </div>
+          <h3 class="speaker-title">Six to Sixteen: A Child's Programming Journey</h3>
+        </article>
+        <p class="speaker-separator">............................................................</p>
+
+        <!-- Surya Rose -->
+        <article class="speaker-card">
+          <div class="speaker-card-header">
+            <img class="speaker-headshot" src="images/headshot-Speaker=Seven.png" alt="Surya Rose">
+            <p class="speaker-name">Surya Rose</p>
+          </div>
+          <h3 class="speaker-title">The Good Internet: How Fandom Can Reclaim the Web</h3>
+        </article>
+        <p class="speaker-separator">............................................................</p>
+
+        <!-- Sacha Jud -->
+        <article class="speaker-card">
+          <div class="speaker-card-header">
+            <img class="speaker-headshot" src="images/headshot-Speaker=Eight.png" alt="Sacha Jud">
+            <p class="speaker-name">Sacha Jud</p>
+          </div>
+        </article>
+
+        <div class="speakers-cta">
+          <a href="https://ffconf.org/cfp" class="btn-outline-dark">apply to <span class="alt">speak</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TRANSITION ==================== -->
+    <div class="section-transition" aria-hidden="true">
+      <img src="images/transition.png" alt="">
+    </div>
+
+    <!-- ==================== LOCATIONS ==================== -->
+    <section id="locations">
+      <div class="inner">
+        <h2 class="section-title">locations</h2>
+
+        <div class="location-group">
+          <h3 class="location-group-title">Venues</h3>
+          <ul class="location-list">
+            <li><span>Duke of Yorks Cinema</span><span class="location-tag">CONFERENCE</span></li>
+            <li><span>Oso Social</span><span class="location-tag">AFTER PARTY</span></li>
+          </ul>
+        </div>
+
+        <div class="location-group">
+          <h3 class="location-group-title">Food &amp; Drinks</h3>
+          <ul class="location-list">
+            <li><span>Worlds End</span><span class="location-tag">burgers, fries</span></li>
+            <li><span>Alcampo Lounge</span><span class="location-tag">future friends</span></li>
+            <li><span>Bardsley's</span><span class="location-tag">fish &amp; chips</span></li>
+            <li><span>The Joker</span><span class="location-tag">wings, burgers, fries</span></li>
+            <li><span>Café Domenica</span><span class="location-tag">light bites</span></li>
+            <li><span>The Open House</span><span class="location-tag">pub food</span></li>
+          </ul>
+        </div>
+
+        <div class="location-group">
+          <h3 class="location-group-title">Hotels</h3>
+          <ul class="location-list">
+            <li><span>Travelodge</span><span class="location-tag">£</span></li>
+            <li><span>IBIS</span><span class="location-tag">££</span></li>
+            <li><span>Leonardo Hotels</span><span class="location-tag">£££</span></li>
+            <li><span>Leonardo Hotels Waterfront</span><span class="location-tag">£££</span></li>
+          </ul>
+        </div>
+
+        <div class="locations-cta">
+          <a href="https://ffconf.org/scholarship" class="btn-outline-light">apply for a <span class="alt">scholarship</span></a>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider" aria-hidden="true">––––––––––––––––––––––</div>
+
+    <!-- ==================== SPONSORS ==================== -->
+    <section id="sponsors">
+      <div class="inner">
+        <h2 class="section-title">SPONSORS</h2>
+        <p class="sponsor-intro">Without our sponsors and supporters, our event would not be possible, please take a moment to look at their web sites and find out more about them. If you would like your company to be a sponsor, please request a sponsorship pack today.</p>
+
+        <div class="sponsor-category">
+          <p class="sponsor-category-label">PLATINUM sponsor</p>
+          <img class="sponsor-logo" src="images/sponsor-1.png" alt="Platinum sponsor">
+        </div>
+
+        <div class="sponsor-category">
+          <p class="sponsor-category-label">day sponsor</p>
+          <img class="sponsor-logo" src="images/sponsor-2.png" alt="Day sponsor">
+        </div>
+
+        <div class="sponsor-category">
+          <p class="sponsor-category-label">day sponsor</p>
+          <img class="sponsor-logo" src="images/sponsor-3.png" alt="Day sponsor">
+        </div>
+
+        <div class="sponsor-category">
+          <p class="sponsor-category-label">day sponsor</p>
+          <img class="sponsor-logo" src="images/sponsor-4.png" alt="Day sponsor">
+        </div>
+
+        <div class="sponsor-category">
+          <p class="sponsor-category-label">scholarship sponsor</p>
+          <img class="sponsor-logo" src="images/sponsor-5.png" alt="Scholarship sponsor">
+        </div>
+
+        <div class="sponsor-category">
+          <p class="sponsor-category-label">day sponsor</p>
+          <img class="sponsor-logo" src="images/sponsor-6.png" alt="Day sponsor">
+        </div>
+
+        <div class="sponsors-cta">
+          <a href="https://ffconf.org/sponsors" class="btn-outline-dark">become a sponsor</a>
+          <a href="https://ffconf.org/sponsors/pack" class="btn-outline-dark">request a <span class="alt">pack</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer>
+      <div class="inner">
+        <nav aria-label="Footer links">
+          <a href="/accessibility">Venue Accessibility</a>
+          <a href="/covid">COVID policy</a>
+          <a href="/inclusion">Inclusion Statement</a>
+          <a href="/scholarship">Scholarship Programme</a>
+          <a href="/conduct">Code of Conduct</a>
+          <a href="/terms">Terms</a>
+          <a href="/privacy">Privacy</a>
+          <a href="https://ffconf.org/previous">Previous Years</a>
+        </nav>
+      </div>
+    </footer>
+
   </body>
 
 </html>
