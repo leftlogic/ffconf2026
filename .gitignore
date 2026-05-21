@@ -1,0 +1,5 @@
+.claude/
+.well-known/appspecific/
+font-source/
+test-results/
+.DS_Store
