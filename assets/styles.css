@@ -75,7 +75,6 @@ a:hover {
   max-width: var(--inner);
   margin: 0 auto;
   padding: 0 var(--pad);
-  /* z-index: 10; */
   position: relative;
 }
 
@@ -273,6 +272,7 @@ a:hover {
     padding: 40px var(--pad);
     background: var(--white);
     z-index: 12;
+    position: relative;
   }
 
   &:before,
@@ -347,7 +347,7 @@ input:focus {
   text-transform: uppercase;
 
   &:hover {
-    z-index: 100;
+    z-index: 30;
     position: relative;
   }
 }
