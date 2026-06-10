@@ -75,7 +75,7 @@ a:hover {
   max-width: var(--inner);
   margin: 0 auto;
   padding: 0 var(--pad);
-  z-index: 10;
+  /* z-index: 10; */
   position: relative;
 }
 
@@ -103,7 +103,7 @@ a:hover {
   pointer-events: none;
   /* background: red; */
   /* display: none; */
-  z-index: 10;
+  z-index: 20;
   /* opacity: 0.3; */
 }
 
@@ -257,29 +257,45 @@ a:hover {
   color: var(--black);
   /* padding: 40px 0; */
   position: relative;
+  margin-top: 40px;
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
     
   .inner {
     padding: 40px var(--pad);
     background: var(--white);
+    z-index: 12;
+  }
+
+  &:before,
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100vw;
+    background: var(--white);
+    transform: rotate(5deg);
+    height: 104%;
+    z-index: 11;
   }
 
   &:before {
-    content: '';
-    height: 100%;
-    background: red;
-    display: block;
-    position: absolute;
-    z-index: 5;
-    width: 100vw;
-    box-shadow: -8px -12px 10px red, 8px 12px 10px green;
-    transform: rotate(5deg);
+    left: -17vw;
+    box-shadow: 8px -12px 10px var(--white);
   }
 
-  &:_after {
+  &:after {
     left: 24vw;
-    box-shadow: 8px 12px 10px red;
-    top: 12px;
-    width: 100vw;
+    box-shadow: 8px 12px 10px var(--white);
+    top: -12px;
   }
 
 }
@@ -621,7 +637,7 @@ li:has(span) {
     align-self: stretch;
     /* flex-grow: 0; */
     /* background: white; */
-    z-index: 20;
+    z-index: 25;
     position: relative;
     filter: saturate(0);
     min-height: 168px;
@@ -740,6 +756,7 @@ footer nav a:hover {
 
     &:hover {
       z-index: 100;
+      position: relative;
     }
 
     &:last-of-type {
