@@ -464,11 +464,10 @@ input:focus {
   justify-content: space-between;
   align-items: baseline;
   font-family: var(--font-special);
-  font-size: 24px;
+  font-size: clamp(1.5rem, 2vw, 2rem);
   gap: 8px;
   padding: 10px 0;
   /* border-top: 1px solid rgba(255, 255, 255, 0.25); */
-  
 
   &:after {
     content: ' ';
@@ -667,12 +666,12 @@ li:has(span) {
   font-family: var(--font-special);
   font-size: 20px;
   padding: 10px 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  /* border-top: 1px solid rgba(255, 255, 255, 0.25); */
   gap: 8px;
 }
 
 .location-list li:last-child {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  /* border-bottom: 1px solid rgba(255, 255, 255, 0.25); */
 }
 
 .location-tag {
