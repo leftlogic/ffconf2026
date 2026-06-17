@@ -69,6 +69,8 @@ body {
   overflow-x: hidden;
   position: relative;
   width: 100vw;
+  /* background-image: url(/images/vintage-speckles.png), url(/images/lined-paper-2.png),
+    url(/images/photo-stone-texture-pattern-2.jpg); */
 }
 
 a:hover {
@@ -116,6 +118,7 @@ a:hover {
   /* display: none; */
   z-index: 20;
   /* opacity: 0.3; */
+  /* display: none; */
 }
 
 /* ========================
@@ -250,52 +253,6 @@ header {
     /* font-size: 2.8rem; */
     /* line-height: 3.4rem; */
   }
-}
-
-/* Section dividers */
-.section-divider {
-  font-family: var(--font-special);
-  font-size: 90px;
-  letter-spacing: 4px;
-  white-space: nowrap;
-  overflow: hidden;
-  margin: 0 auto;
-  user-select: none;
-  background: var(--black);
-  color: var(--white);
-  transform: rotate(-2deg);
-  margin-left: -20px;
-  width: 120vw;
-  position: relative;
-  z-index: 5;
-  padding: 0;
-  line-height: 0.4;
-  vertical-align: baseline;
-  padding-bottom: 14px;
-}
-
-#schedule {
-  @media (min-width: 720px) {
-    position: relative;
-    h2 {
-      --margin: clamp(3.5rem, 12vw, 8rem);
-      --y: calc(clamp(3.5rem, 10vw, 7rem) + var(--margin));
-      --x: calc(var(--y) * -1);
-      height: 0px;
-      transform-origin: 50%;
-      transform: translate(var(--x), var(--y)) rotate(-90deg);
-      width: fit-content;
-    }
-  }
-}
-
-#schedule + .section-divider {
-  margin-top: -27px;
-}
-
-#locations + .section-divider {
-  margin-top: 3px;
-  transform: rotate(2deg);
 }
 
 /* ========================
@@ -433,6 +390,77 @@ input:focus {
 }
 
 /* ========================
+         SHARED BUTTON STYLES
+         ======================== */
+
+.btn-outline-dark {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 24px;
+  text-decoration: none;
+  padding: 14px 28px;
+  border: 2px solid var(--black);
+  color: var(--black);
+  line-height: 1;
+
+  &.solid {
+    background: var(--black);
+    color: var(--white);
+  }
+}
+
+.btn-outline-light {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 24px;
+  text-decoration: none;
+  padding: 14px 28px;
+  border: 2px solid var(--white);
+  color: var(--white);
+  line-height: 1;
+
+  &.solid {
+    background: var(--white);
+    color: var(--black);
+  }
+}
+
+.btn-outline-dark .alt,
+.btn-outline-light .alt {
+  font-family: var(--font-display);
+}
+
+.btn {
+  transition: transform 50ms ease-out;
+
+  &:hover {
+    transform: rotate(-3deg) scale(1.05);
+  }
+}
+
+/* Section dividers */
+.section-divider {
+  font-family: var(--font-special);
+  font-size: 90px;
+  letter-spacing: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  margin: 0 auto;
+  user-select: none;
+  background: var(--black);
+  color: var(--white);
+  transform: rotate(-2deg);
+  margin-left: -20px;
+  width: 120vw;
+  position: relative;
+  z-index: 5;
+  padding: 0;
+  line-height: 0.4;
+  vertical-align: baseline;
+  padding-bottom: 14px;
+}
+
+/* ========================
          SCHEDULE
          ======================== */
 
@@ -442,6 +470,22 @@ input:focus {
   background: var(--black);
   z-index: 10;
   position: relative;
+}
+
+#schedule {
+  @media (min-width: 720px) {
+    position: relative;
+    h2 {
+      --margin: clamp(3.5rem, 12vw, 8rem);
+      --y: calc(clamp(3.5rem, 10vw, 7rem) + var(--margin));
+      --x: calc(var(--y) * -1);
+      height: 60px;
+      transform-origin: 50%;
+      transform: translate(var(--x), var(--y)) rotate(-90deg);
+      width: fit-content;
+      margin: 0;
+    }
+  }
 }
 
 .schedule-group {
@@ -522,6 +566,10 @@ li:has(span) {
   font-variant: tabular-nums;
 }
 
+#schedule + .section-divider {
+  margin-top: -27px;
+}
+
 /* ========================
          SPEAKERS
          ======================== */
@@ -551,11 +599,16 @@ li:has(span) {
     --offset-with-padding: calc(var(--offset) + 40px);
 
     img {
+      &[alt="Niels Leenheer"] {
+        --offset: 500px;
+      }
+
       position: relative;
       top: revert;
       right: revert;
       width: var(--offset);
       height: var(--offset);
+
     }
 
     &:nth-child(odd of .speaker-card) {
@@ -625,9 +678,10 @@ li:has(span) {
 
 .speaker-bio {
   font-family: var(--font-special);
-  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
   line-height: 1.5;
   margin-bottom: 16px;
+  
 
   a {
     color: inherit;
@@ -640,13 +694,15 @@ li:has(span) {
   display: flex;
   /* justify-content: space-between; */
   gap: clamp(8px, 4vw, 16px);
-  align-items: center;
+  align-items: flex-start;
   margin-bottom: 4px;
+  flex-wrap: wrap;
 }
 
 .speaker-socials a {
   color: var(--black);
   text-decoration: none;
+  white-space: nowrap;
 }
 
 .speaker-separator {
@@ -678,6 +734,7 @@ li:has(span) {
 .section-transition img {
   width: 100%;
   display: block;
+  height: 400px;
 }
 
 /* ========================
@@ -695,8 +752,8 @@ li:has(span) {
       --vi: calc(var(--v) * -1);
       height: 0px;
       transform-origin: var(--v) -90px;
-      /* transform-origin: 50% 0%; */
-      transform: rotate(-90deg) translateY(var(--v));
+      transform-origin: 88% 50%;
+      transform: rotate(-90deg) translateX(180px);
     }
   }
 }
@@ -744,6 +801,45 @@ li:has(span) {
 .locations-cta {
   text-align: center;
   margin-top: 56px;
+}
+
+.apply-cta {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  a {
+    display: block;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: clamp(2rem, 10vw, 2.5rem);
+    max-width: 75vw;
+    transform: rotate(-2deg);
+
+    &:hover {
+      z-index: 100;
+      position: relative;
+    }
+
+    &:last-of-type {
+      align-self: end;
+    }
+  }
+
+  @media (min-width: 720px) {
+    flex-direction: row;
+
+    a {
+      max-width: 50%;
+      width: 50%;
+      align-self: center;
+    }
+  }
+}
+
+#locations + .section-divider {
+  margin-top: 3px;
+  transform: rotate(2deg);
 }
 
 /* ========================
@@ -848,45 +944,10 @@ li:has(span) {
   align-items: center;
 }
 
-/* ========================
-         SHARED BUTTON STYLES
-         ======================== */
-
-.btn-outline-dark {
-  display: inline-block;
-  font-family: var(--font-body);
-  font-size: 24px;
-  text-decoration: none;
-  padding: 14px 28px;
-  border: 2px solid var(--black);
-  color: var(--black);
-  line-height: 1;
-
-  &.solid {
-    background: var(--black);
-    color: var(--white);
-  }
-}
-
-.btn-outline-light {
-  display: inline-block;
-  font-family: var(--font-body);
-  font-size: 24px;
-  text-decoration: none;
-  padding: 14px 28px;
-  border: 2px solid var(--white);
-  color: var(--white);
-  line-height: 1;
-
-  &.solid {
-    background: var(--white);
-    color: var(--black);
-  }
-}
-
-.btn-outline-dark .alt,
-.btn-outline-light .alt {
-  font-family: var(--font-display);
+.request-sponsor-pack {
+  text-transform: uppercase;
+  font-size: clamp(1.3rem, 2vw, 5rem);
+  transform: rotate(-4deg);
 }
 
 /* ========================
@@ -915,53 +976,4 @@ footer nav a {
 
 footer nav a:hover {
   text-decoration: underline;
-}
-
-/* ===== other parts ===== */
-.request-sponsor-pack {
-  text-transform: uppercase;
-  font-size: clamp(1.3rem, 2vw, 5rem);
-  transform: rotate(-4deg);
-}
-
-.apply-cta {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-
-  a {
-    display: block;
-    text-transform: uppercase;
-    text-align: center;
-    font-size: clamp(2rem, 10vw, 2.5rem);
-    max-width: 75vw;
-    transform: rotate(-2deg);
-
-    &:hover {
-      z-index: 100;
-      position: relative;
-    }
-
-    &:last-of-type {
-      align-self: end;
-    }
-  }
-
-  @media (min-width: 720px) {
-    flex-direction: row;
-
-    a {
-      max-width: 50%;
-      width: 50%;
-      align-self: center;
-    }
-  }
-}
-
-.btn {
-  transition: transform 50ms ease-out;
-
-  &:hover {
-    transform: rotate(-3deg) scale(1.05);
-  }
 }
