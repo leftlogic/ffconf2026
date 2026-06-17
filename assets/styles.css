@@ -53,24 +53,15 @@
   padding: 0;
 }
 
-html {
-  /* background: var(--black); */
-}
-
 body {
-  /* background-color: var(--black); */
-  /* background-image: url('/images/bg-cropped.jpg'); */
   background-repeat: repeat;
   background-size: auto;
   color: var(--white);
   font-family: var(--font-body);
-  /* max-width: 393px; */
   margin: 0 auto;
   overflow-x: hidden;
   position: relative;
   width: 100vw;
-  /* background-image: url(/images/vintage-speckles.png), url(/images/lined-paper-2.png),
-    url(/images/photo-stone-texture-pattern-2.jpg); */
 }
 
 a:hover {
@@ -102,28 +93,23 @@ a:hover {
 }
 
 #paper-filter {
-  /* Rectangle 1 */
   position: absolute;
   width: 100vw;
   height: 100%;
   left: 0px;
   top: 0px;
-  background:
+  background-image:
     linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-    url(/images/vintage-speckles.png), url(/images/lined-paper-2.png),
-    url(/images/photo-stone-texture-pattern-2.jpg);
+    url(/images/vintage-speckles.avif), url(/images/lined-paper-2.png),
+    url(/images/photo-stone-texture-pattern-2.avif);
+  background-size: auto, auto, auto, 50%;
   mix-blend-mode: difference;
   pointer-events: none;
-  /* background: red; */
-  /* display: none; */
   z-index: 20;
-  /* opacity: 0.3; */
   /* display: none; */
 }
 
-/* ========================
-         HERO â€” black portion
-         ======================== */
+/* ======================== HERO ======================== */
 header {
   @media (min-width: 720px) {
     max-width: 1100px;
@@ -163,8 +149,6 @@ header {
   text-transform: uppercase;
   display: block;
   font-size: clamp(4rem, 9vw, 10rem);
-  /* transform: rotate(-6deg); */
-  /* margin-right: clamp(1rem, 10vw, 20rem); */
   text-align: left;
 }
 
@@ -236,7 +220,6 @@ header {
   color: var(--white);
   max-width: var(--inner);
   margin: 0 auto;
-  /* padding: 0 var(--pad); */
   text-align: justify;
   text-wrap: pretty;
 
@@ -255,9 +238,7 @@ header {
   }
 }
 
-/* ========================
-         HERO â€” white band
-         ======================== */
+/* ======================== HERO + white band ======================== */
 
 .hero-white {
   background: var(--black);
@@ -312,7 +293,6 @@ header {
       top: -12px;
 
       @media (min-width: 720px) {
-        /* top: 0; */
         left: 410px;
       }
     }
@@ -389,9 +369,7 @@ input:focus {
   font-family: var(--font-display);
 }
 
-/* ========================
-         SHARED BUTTON STYLES
-         ======================== */
+/* ======================== SHARED BUTTON STYLES ======================== */
 
 .btn-outline-dark {
   display: inline-block;
@@ -460,9 +438,7 @@ input:focus {
   padding-bottom: 14px;
 }
 
-/* ========================
-         SCHEDULE
-         ======================== */
+/* ======================== SCHEDULE ======================== */
 
 #schedule {
   padding: 72px 0;
@@ -515,7 +491,6 @@ input:focus {
   font-size: clamp(1.5rem, 2vw, 2rem);
   gap: 8px;
   padding: 10px 0;
-  /* border-top: 1px solid rgba(255, 255, 255, 0.25); */
 
   &:after {
     content: ' ';
@@ -533,10 +508,6 @@ input:focus {
   :last-child {
     order: 3;
   }
-}
-
-.schedule-list li:last-child {
-  /* border-bottom: 1px solid rgba(255, 255, 255, 0.25); */
 }
 
 li:has(span) {
@@ -560,9 +531,6 @@ li:has(span) {
 
 .schedule-time {
   white-space: nowrap;
-  /* font-size: 16px; */
-  /* opacity: 0.7; */
-  /* padding-left: 8px; */
   font-variant: tabular-nums;
 }
 
@@ -570,9 +538,7 @@ li:has(span) {
   margin-top: -27px;
 }
 
-/* ========================
-         SPEAKERS
-         ======================== */
+/* ======================== SPEAKERS ======================== */
 
 #speakers {
   background: var(--white);
@@ -599,16 +565,11 @@ li:has(span) {
     --offset-with-padding: calc(var(--offset) + 40px);
 
     img {
-      &[alt="Niels Leenheer"] {
-        --offset: 500px;
-      }
-
       position: relative;
       top: revert;
       right: revert;
       width: var(--offset);
       height: var(--offset);
-
     }
 
     &:nth-child(odd of .speaker-card) {
@@ -635,7 +596,6 @@ li:has(span) {
 /* The top portion of the card: name + headshot float upper-right */
 .speaker-card-header {
   position: relative;
-  /* min-height: 140px; */
   margin-bottom: 16px;
 }
 
@@ -681,7 +641,6 @@ li:has(span) {
   font-size: clamp(1.25rem, 2vw, 1.75rem);
   line-height: 1.5;
   margin-bottom: 16px;
-  
 
   a {
     color: inherit;
@@ -721,9 +680,7 @@ li:has(span) {
   margin-top: 56px;
 }
 
-/* ========================
-         SECTION TRANSITION
-         ======================== */
+/* ======================== SECTION TRANSITION ======================== */
 
 .section-transition {
   display: block;
@@ -737,9 +694,7 @@ li:has(span) {
   height: 400px;
 }
 
-/* ========================
-         LOCATIONS
-         ======================== */
+/* ======================== LOCATIONS ======================== */
 
 #locations {
   padding: 72px 0;
@@ -842,9 +797,7 @@ li:has(span) {
   transform: rotate(2deg);
 }
 
-/* ========================
-         SPONSORS
-         ======================== */
+/* ======================== SPONSORS ======================== */
 
 #sponsors {
   background: var(--white);
@@ -950,14 +903,11 @@ li:has(span) {
   transform: rotate(-4deg);
 }
 
-/* ========================
-         FOOTER
-         ======================== */
+/* ======================== FOOTER ======================== */
 
 footer {
   padding: 56px 0 48px;
   text-align: center;
-  /* background: var(--black); */
 }
 
 footer nav {
