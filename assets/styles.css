@@ -59,7 +59,7 @@ body {
   color: var(--white);
   font-family: var(--font-body);
   margin: 0 auto;
-  overflow-x: hidden;
+  overflow-x: clip;
   position: relative;
   width: 100vw;
 }
@@ -418,17 +418,15 @@ input:focus {
 
 /* Section dividers */
 .section-divider {
-  font-family: var(--font-special);
-  font-size: 90px;
-  letter-spacing: 4px;
-  white-space: nowrap;
-  overflow: hidden;
   margin: 0 auto;
   user-select: none;
-  background: var(--black);
+  background-color: var(--black);
+  background-image: url(/images/cut.svg);
+  background-repeat: repeat-x;
   color: var(--white);
   transform: rotate(-2deg);
   margin-left: -20px;
+  height: 20px;
   width: 120vw;
   position: relative;
   z-index: 5;
