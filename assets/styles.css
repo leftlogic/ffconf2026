@@ -180,7 +180,8 @@ header {
   font-family: var(--font-body);
   font-size: 40px;
   text-decoration: none;
-  padding: 16px 32px;
+  padding: 16px 12px;
+  /* 32px */
   background: var(--white);
   color: var(--black);
   text-align: center;
@@ -640,28 +641,68 @@ li:has(span) {
     float: right;
     margin-right: -71px;
   }
-  
+
   .speaker-bio {
     clear: both;
   }
 
-  [data-id="cyd"] img {
-    shape-outside: polygon(32px 155px, 24.1% 128px, 23.76% 32.2%, 34.72% 9.41%, 76.5% 1.74%, 93.87% 21.61%, 93.04% 88.92%, 1.53% 88.44%, 13px 75%);
-  }
-  
-  [data-id="dees"] img {
-    shape-outside: polygon(43px 160px, 24.1% 128px, 23.76% 32.2%, 34.72% 9.41%, 76.5% 1.74%, 93.87% 21.61%, 93.04% 88.92%, 24.61% 89.27%, 29px 77.08%);
+  [data-id='cyd'] img {
+    shape-outside: polygon(
+      32px 155px,
+      24.1% 128px,
+      23.76% 32.2%,
+      34.72% 9.41%,
+      76.5% 1.74%,
+      93.87% 21.61%,
+      93.04% 88.92%,
+      1.53% 88.44%,
+      13px 75%
+    );
   }
 
-  [data-id="niels"] img {
-    shape-outside: polygon(32px 155px, 24.1% 128px, 23.76% 32.2%, 34.72% 9.41%, 76.5% 1.74%, 93.87% 21.61%, 93.04% 88.92%, 1.53% 88.44%, 13px 75%);
+  [data-id='dees'] img {
+    shape-outside: polygon(
+      43px 160px,
+      24.1% 128px,
+      23.76% 32.2%,
+      34.72% 9.41%,
+      76.5% 1.74%,
+      93.87% 21.61%,
+      93.04% 88.92%,
+      24.61% 89.27%,
+      29px 77.08%
+    );
   }
 
-  [data-id="lena"] img {
-    shape-outside: polygon(43px 164px, 37.71% 130px, 33.82% 38.03%, 50.1% 17.74%, 88.93% 10.07%, 96.83% 23.28%, 101.92% 88.50%, 1.53% 88.44%, 13px 75%);
+  [data-id='niels'] img {
+    shape-outside: polygon(
+      32px 155px,
+      24.1% 128px,
+      23.76% 32.2%,
+      34.72% 9.41%,
+      76.5% 1.74%,
+      93.87% 21.61%,
+      93.04% 88.92%,
+      1.53% 88.44%,
+      13px 75%
+    );
+  }
+
+  [data-id='lena'] img {
+    shape-outside: polygon(
+      43px 164px,
+      37.71% 130px,
+      33.82% 38.03%,
+      50.1% 17.74%,
+      88.93% 10.07%,
+      96.83% 23.28%,
+      101.92% 88.5%,
+      1.53% 88.44%,
+      13px 75%
+    );
   }
 }
-  
+
 .speaker-name {
   font-family: var(--font-body);
   font-size: 24px;
