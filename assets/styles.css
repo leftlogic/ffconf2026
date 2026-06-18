@@ -59,9 +59,9 @@ body {
   color: var(--white);
   font-family: var(--font-body);
   margin: 0 auto;
-  overflow-x: clip;
+  overflow-x: hidden;
   position: relative;
-  width: 100vw;
+  /* width: 100vw; */
 }
 
 a:hover {
@@ -196,7 +196,7 @@ header {
 
 .btn-price {
   display: block;
-  width: 100%;
+  width: calc(100% - 32px);
   font-family: var(--font-body);
   font-size: 40px;
   text-decoration: none;
@@ -418,22 +418,17 @@ input:focus {
 
 /* Section dividers */
 .section-divider {
+  --n: clamp(32px, 10vw, 80px);
   margin: 0 auto;
   user-select: none;
-  background-color: var(--black);
-  background-image: url(/images/cut.svg);
-  background-repeat: repeat-x;
-  color: var(--white);
-  transform: rotate(-2deg);
-  margin-left: -20px;
-  height: 20px;
-  width: 120vw;
+  transform: rotate(-2deg) translateY(var(--n));
+  height: clamp(32px, 10vw, 80px);
   position: relative;
   z-index: 5;
   padding: 0;
-  line-height: 0.4;
-  vertical-align: baseline;
-  padding-bottom: 14px;
+  background-image: url(/images/cut.svg);
+  background-repeat: repeat-x;
+  background-size: contain;
 }
 
 /* ======================== SCHEDULE ======================== */
@@ -448,8 +443,12 @@ input:focus {
 
 #schedule {
   @media (min-width: 720px) {
+    .inner {
+      display: grid;
+      grid-template-columns: auto 1fr;
+    }
     position: relative;
-    h2 {
+    _h2 {
       --margin: clamp(3.5rem, 12vw, 8rem);
       --y: calc(clamp(3.5rem, 10vw, 7rem) + var(--margin));
       --x: calc(var(--y) * -1);
@@ -459,6 +458,12 @@ input:focus {
       width: fit-content;
       margin: 0;
     }
+
+    h2 {
+      writing-mode: vertical-lr;
+      transform-origin: 50;
+      transform: rotate(180deg);
+    }
   }
 }
 
@@ -466,7 +471,7 @@ input:focus {
   margin-bottom: 40px;
 
   @media (min-width: 720px) {
-    margin-left: clamp(3.5rem, 12vw, 8rem);
+    margin-left: clamp(3.5rem, 8vw, 5rem);
   }
 }
 
@@ -532,17 +537,15 @@ li:has(span) {
   font-variant: tabular-nums;
 }
 
-#schedule + .section-divider {
-  margin-top: -27px;
-}
-
 /* ======================== SPEAKERS ======================== */
 
 #speakers {
   background: var(--white);
   color: var(--black);
   padding: 72px 0;
+  padding-top: 144px;
   overflow: hidden;
+  transform: translateZ(0);
 }
 
 .speaker-card {
@@ -639,10 +642,10 @@ li:has(span) {
   font-size: clamp(1.25rem, 2vw, 1.75rem);
   line-height: 1.5;
   margin-bottom: 16px;
+}
 
-  a {
-    color: inherit;
-  }
+.speaker-bio a {
+  color: inherit;
 }
 
 .speaker-socials {
@@ -689,7 +692,7 @@ li:has(span) {
 .section-transition img {
   width: 100%;
   display: block;
-  height: 400px;
+  height: clamp(100px, 10vw, 400px);
 }
 
 /* ======================== LOCATIONS ======================== */
@@ -700,13 +703,22 @@ li:has(span) {
 
   @media (min-width: 720px) {
     padding-top: 0;
+
+    .inner {
+      display: grid;
+      gap: 20px;
+
+      & > div {
+        grid-row-start: 1;
+      }
+    }
+
     h2 {
-      --v: 440px;
-      --vi: calc(var(--v) * -1);
-      height: 0px;
-      transform-origin: var(--v) -90px;
-      transform-origin: 88% 50%;
-      transform: rotate(-90deg) translateX(180px);
+      writing-mode: vertical-lr;
+      grid-column-start: 2;
+      transform-origin: 50%;
+      transform: rotate(180deg);
+      align-self: self-start;
     }
   }
 }
@@ -715,7 +727,7 @@ li:has(span) {
   margin-bottom: 40px;
 
   @media (min-width: 720px) {
-    margin-right: 140px;
+    margin-right: 0;
   }
 }
 
@@ -791,8 +803,8 @@ li:has(span) {
 }
 
 #locations + .section-divider {
-  margin-top: 3px;
-  transform: rotate(2deg);
+  --n: clamp(32px, 10vw, 80px);
+  transform: rotate(2deg) translateY(var(--n));
 }
 
 /* ======================== SPONSORS ======================== */
@@ -801,6 +813,7 @@ li:has(span) {
   background: var(--white);
   color: var(--black);
   padding: 72px 0;
+  padding-top: 144px;
 
   ul {
     list-style: none;
@@ -809,7 +822,6 @@ li:has(span) {
   }
 
   @media (min-width: 720px) {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 59% 94%, 0 94%);
     h2 {
       text-align: center;
     }
@@ -823,6 +835,12 @@ li:has(span) {
   }
 }
 
+.clip-edge {
+  background: var(--white);
+  height: clamp(32px, 6vw, 72px);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 45% 0%, -1000% 0%);
+}
+
 .sponsor-intro {
   font-family: var(--font-body);
   font-size: clamp(1.25rem, 2vw, 1.5rem);
@@ -830,8 +848,9 @@ li:has(span) {
   margin-bottom: 48px;
 
   @media (min-width: 720px) {
+    --i: clamp(2rem, 6vw, 5rem);
     text-align: center;
-    margin: 0 8%;
+    margin: var(--i) 8%;
   }
 }
 
