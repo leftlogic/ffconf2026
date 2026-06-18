@@ -262,10 +262,14 @@ header {
   margin-top: 40px;
 
   .inner {
-    padding: 40px var(--pad);
+    /* padding: 40px var(--pad); */
     background: var(--white);
     z-index: 12;
     position: relative;
+
+    overflow-x: clip;
+    max-width: 100%;
+    padding: 40px clamp(40px, 10vw, 11.25rem);
 
     @media (min-width: 720px) {
       display: grid;
@@ -656,7 +660,7 @@ li:has(span) {
   }
 
   .speaker-bio {
-    clear: both;
+    /* clear: both; */
   }
 
   [data-id='cyd'] img {
@@ -708,10 +712,26 @@ li:has(span) {
       33.82% 38.03%,
       50.1% 17.74%,
       88.93% 10.07%,
-      96.83% 23.28%,
-      101.92% 88.5%,
+      106.3% 23.28%,
+      105.63% 90.15%,
+      82.83% 100.94%,
+      26.18% 89.33%,
       1.53% 88.44%,
       13px 75%
+    );
+  }
+
+  [data-id='next'] img {
+    shape-outside: polygon(
+      36px 140px,
+      37.71% 130px,
+      33.82% 38.03%,
+      50.1% 17.74%,
+      78.87% 10.9%,
+      106.3% 35.36%,
+      99.55% 92.25%,
+      54.19% 97.19%,
+      9px 72.08%
     );
   }
 }
