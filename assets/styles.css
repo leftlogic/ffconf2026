@@ -418,17 +418,36 @@ input:focus {
 
 /* Section dividers */
 .section-divider {
+  display: block;
+  width: 100%;
+  /* transform: translateZ(0px); */
+  z-index: 10;
+  /* overflow: clip; */
+  position: relative;
+  height: 0px;
+  background: none;
+  overflow-x: clip;
+}
+.section-divider:after {
+  content: ' ';
   --n: clamp(32px, 10vw, 80px);
   margin: 0 auto;
   user-select: none;
-  transform: rotate(-2deg) translateY(var(--n));
+  transform: rotate(-2deg);
+  /* translateY(var(--n)); */
   height: clamp(32px, 10vw, 80px);
-  position: relative;
-  z-index: 5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 110vw;
+  z-index: 100000;
   padding: 0;
   background-image: url(/images/cut.svg);
   background-repeat: repeat-x;
   background-size: contain;
+  margin-left: -20px;
+  /* overflow: clip; */
+  display: block;
 }
 
 /* ======================== SCHEDULE ======================== */
@@ -802,9 +821,9 @@ li:has(span) {
   }
 }
 
-#locations + .section-divider {
+#locations + .section-divider:after {
   --n: clamp(32px, 10vw, 80px);
-  transform: rotate(2deg) translateY(var(--n));
+  transform: rotate(2deg);
 }
 
 /* ======================== SPONSORS ======================== */
