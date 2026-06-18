@@ -43,8 +43,17 @@
   --font-body: 'Bayon', sans-serif;
   --font-label: 'Blackout Two AM', sans-serif;
   --font-special: 'Special Gothic Condensed One', sans-serif;
+  --high-contrast: 0;
 }
 
+@media (prefers-contrast: more) {
+  :root { --high-contrast: 1; }
+  #high_contrast { display: none; }
+}
+
+body:has(#high_contrast input:checked) {
+  --high-contrast: 1;
+}
 *,
 *::before,
 *::after {
@@ -967,6 +976,10 @@ li:has(span) {
     position: relative;
     filter: saturate(0);
     height: 168px;
+    
+    
+    
+    
 
     a {
       width: 100%;
@@ -1034,4 +1047,25 @@ footer nav a {
 
 footer nav a:hover {
   text-decoration: underline;
+}
+
+#high_contrast {
+  position: absolute;
+  top: 0;
+  right: 8px;
+  cursor: pointer;
+}
+
+@container style(--high-contrast: 1) {
+  #paper-filter {
+    opacity: 0;
+  }
+
+  footer {
+    background: var(--black);
+  }
+
+  .sponsor-category > div {
+    filter: none;
+  }
 }
