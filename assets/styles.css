@@ -1044,6 +1044,8 @@ footer nav a:hover {
 }
 
 #high_contrast {
+  display: flex;
+  align-items: center;
   z-index: 10;
   position: absolute;
   top: 0;
