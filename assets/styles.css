@@ -47,8 +47,12 @@
 }
 
 @media (prefers-contrast: more) {
-  :root { --high-contrast: 1; }
-  #high_contrast { display: none; }
+  :root {
+    --high-contrast: 1;
+  }
+  #high_contrast {
+    display: none;
+  }
 }
 
 body:has(#high_contrast input:checked) {
@@ -976,10 +980,6 @@ li:has(span) {
     position: relative;
     filter: saturate(0);
     height: 168px;
-    
-    
-    
-    
 
     a {
       width: 100%;
@@ -1061,7 +1061,25 @@ footer nav a:hover {
     opacity: 0;
   }
 
-  footer {
+  .hero-white {
+    margin-top: 0;
+  }
+
+  .hero-black {
+    margin: 0 auto;
+  }
+
+  header {
+    margin: 0;
+    max-width: 100%;
+    padding-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  footer,
+  body,
+  header {
     background: var(--black);
   }
 
