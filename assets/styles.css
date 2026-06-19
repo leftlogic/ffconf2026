@@ -164,7 +164,7 @@ header {
   /* line-height: 1; */
   color: var(--white);
   margin-bottom: 32px;
-  transform: rotate(-3deg);
+  rotate: -3deg;
   letter-spacing: -2px;
 }
 
@@ -192,7 +192,7 @@ header {
 }
 
 .hero-ctas a {
-  transform: rotate(2deg);
+  rotate: 2deg;
 }
 
 .btn-buy {
@@ -290,13 +290,13 @@ header {
       position: absolute;
       width: 100vw;
       background: var(--white);
-      transform: rotate(4deg);
+      rotate: 4deg;
       height: 104%;
       z-index: 11;
 
       @media (min-width: 720px) {
         max-width: 700px;
-        transform: rotate(3deg);
+        rotate: 3deg;
         height: 110%;
       }
     }
@@ -451,7 +451,7 @@ input:focus {
   --n: clamp(32px, 10vw, 80px);
   margin: 0 auto;
   user-select: none;
-  transform: rotate(-2deg);
+  rotate: -2deg;
   height: clamp(32px, 10vw, 80px);
   position: absolute;
   top: 0;
@@ -502,7 +502,7 @@ input:focus {
 
     h2 {
       writing-mode: vertical-lr;
-      transform: rotate(180deg);
+      rotate: 180deg;
     }
   }
 }
@@ -583,7 +583,6 @@ li:has(span) {
   padding: 72px 0;
   padding-top: 144px;
   overflow: hidden;
-  transform: translateZ(0);
 }
 
 .speaker-card {
@@ -832,7 +831,7 @@ li:has(span) {
     h2 {
       writing-mode: vertical-lr;
       grid-column-start: 2;
-      transform: rotate(180deg);
+      rotate: 180deg;
       align-self: self-start;
     }
   }
@@ -890,7 +889,7 @@ li:has(span) {
     text-align: center;
     font-size: clamp(2rem, 10vw, 2.5rem);
     max-width: 75vw;
-    transform: rotate(-2deg);
+    rotate: -2deg;
 
     &:hover {
       z-index: 100;
@@ -915,7 +914,7 @@ li:has(span) {
 
 #locations + .section-divider:after {
   --n: clamp(32px, 10vw, 80px);
-  transform: rotate(2deg);
+  rotate: 2deg;
 }
 
 #sponsors {
@@ -1026,7 +1025,7 @@ li:has(span) {
 .request-sponsor-pack {
   text-transform: uppercase;
   font-size: clamp(1.3rem, 2vw, 5rem);
-  transform: rotate(-4deg);
+  rotate: -4deg;
 }
 
 footer {
