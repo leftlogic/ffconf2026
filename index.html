@@ -38,9 +38,18 @@
           </div>
         </div>
 
+        <script src="/when-do.mjs" type="module"></script>
         <div class="hero-ctas">
-          <a href="https://ffconf.org/tickets" class="btn btn-buy"><span class="alt">Tickets</span>: 25-Jun</a>
-          <a href="https://ffconf.org/tickets" class="btn btn-price"><span class="alt">£219</span> +VAT</a>
+          <when-do datetime="2026-06-25T11:00" do="hide">
+            <a href="https://ffconf.org/tickets" class="btn btn-buy"><span class="alt">Tickets</span>: 25-Jun</a>
+            <a href="https://ffconf.org/tickets" class="btn btn-price"><span class="alt">£219</span> +VAT</a>
+          </when-do>
+          <when-do datetime="2026-06-25T11:00" do="show">
+            <a href="https://www.tickettailor.com/checkout/view-event/id/8487726/chk/0db6" class="btn btn-buy">Buy
+              tickets</a>
+            <a href="https://www.tickettailor.com/checkout/view-event/id/8487726/chk/0db6" class="btn btn-price"><span
+                class="alt">£219</span> +VAT</a>
+          </when-do>
         </div>
 
         <p class="hero-keyinfo">duke of yorks cinema&nbsp;• located in
@@ -55,7 +64,7 @@
     <div class="hero-white">
       <div class="inner">
         <p class="hero-description">A room full of people <span class="hl">who still give a damn</span> about the web
-          and it's community &mdash; with talks with <span class="hl">talks meant to be experienced</span>, not
+          and it's community &mdash; with <span class="hl">talks meant to be experienced</span>, not
           bookmarked.</p>
         <!-- <p class="hero-description"><span class="hl">A full day of eight</span> carefully curated sessions for an
           <span class="hl">audience that cares</span> about the <span class="hl">future of the web</span>, and who
