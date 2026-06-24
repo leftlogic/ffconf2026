@@ -200,6 +200,11 @@ header {
 .hero-ctas {
   max-width: 299px;
   margin: 0 auto 32px;
+
+  @media (min-width: 720px) {
+    align-self: anchor-center;
+    margin-bottom: 0;
+  }
 }
 
 .hero-ctas a {
