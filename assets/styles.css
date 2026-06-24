@@ -37,7 +37,7 @@
 :root {
   --black: #000;
   --white: #fff;
-  --inner: 329px;
+  --inner: clamp(329px, 10vw 700px);
   --pad: clamp(16px, 3vw, 32px);
   --font-display: 'Barriecito', cursive;
   --font-body: 'Bayon', sans-serif;
@@ -996,7 +996,8 @@ li:has(span) {
 .sponsor-category-label {
   font-family: var(--font-label);
   font-size: 24px;
-  margin-bottom: 16px;
+  margin-bottom: 32px;
+  line-height: 1;
 }
 
 .sponsor-logo {
