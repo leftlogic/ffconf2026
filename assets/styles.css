@@ -204,6 +204,7 @@ header {
   @media (min-width: 720px) {
     align-self: anchor-center;
     margin-bottom: 0;
+    position: relative;
   }
 }
 
@@ -260,6 +261,8 @@ header {
   margin: 0 auto;
   text-align: justify;
   text-wrap: pretty;
+  z-index: 101;
+  position: relative;
 
   a {
     color: inherit;
@@ -1111,4 +1114,23 @@ footer nav a:hover {
   .sponsor-category > div {
     filter: none;
   }
+}
+
+.hero-ctas {
+  position: relative;
+}
+
+.hero-ctas:has(when-do[do='show'][style$='contents']):after {
+  content: '';
+  display: block;
+  background: url(/images/ring-black.avif) no-repeat;
+  position: absolute;
+  background-size: contain;
+  z-index: 100;
+  pointer-events: none;
+  width: 142%;
+  left: -60px;
+  top: -50px;
+  aspect-ratio: 1;
+  transform: scaleX(-1);
 }
