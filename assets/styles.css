@@ -264,7 +264,7 @@ header {
   text-wrap: pretty;
   z-index: 101;
   position: relative;
-  margin-top: 120px;
+  /* margin-top: 120px; */
 
   a {
     color: inherit;
