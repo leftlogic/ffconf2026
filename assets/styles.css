@@ -1153,3 +1153,7 @@ footer nav a:hover {
     z-index: 1000;
   }
 }
+
+when-do[do='hide'] {
+  display: none;
+}
