@@ -1180,3 +1180,11 @@ footer nav a:hover {
 when-do[do='hide'] {
   display: none;
 }
+
+.wide {
+  display: none;
+
+  @media (min-width: 720px) {
+    display: inline-block;
+  }
+}
