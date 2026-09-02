@@ -762,6 +762,34 @@ li:has(span) {
     );
   }
 
+  [data-id='hidde'] img {
+    shape-outside: polygon(
+      77px 120px,
+      37.71% 99px,
+      6.01% 16.37%,
+      41.82% -1.84%,
+      76.5% 1.74%,
+      103.93% 19.11%,
+      102.51% 89.75%,
+      16.32% 76.77%,
+      39px 60.42%
+    );
+  }
+
+  [data-id='cennydd'] img {
+    shape-outside: polygon(
+      48px 117px,
+      36.53% 106px,
+      39.74% 34.28%,
+      47.74% 18.99%,
+      77.09% 8.82%,
+      93.87% 21.61%,
+      106.06% 88.51%,
+      59.52% 90.94%,
+      15px 66.25%
+    );
+  }
+
   [data-id='next'] img {
     shape-outside: polygon(
       36px 140px,
