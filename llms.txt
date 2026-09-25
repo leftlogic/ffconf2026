@@ -1,0 +1,60 @@
+# FFConf 2026
+
+> FFConf 2026 is a one-day, single-track conference about the web and JavaScript. It takes place on Friday 13 November 2026 at the Duke of York's Picturehouse cinema in Brighton, UK. Eight talks run from 9am to 6pm, followed by an evening social. FFConf has run every year since 2009 and is organised by Left Logic.
+
+FFConf is for web developers, front-end developers, designers and anyone who still cares about the web and its community. The talks are meant to be experienced in the room rather than bookmarked for later.
+
+## Key facts
+
+- Name: FFConf 2026 (also written "ffconf")
+- Date: Friday 13 November 2026
+- Time: 09:00 to 18:00 (UK time, GMT), social from 18:00
+- Venue: Duke of York's Picturehouse, Preston Circus, Brighton, BN1 4NA, United Kingdom
+- Format: in person only, single track, eight talks
+- Tickets: £249 + VAT, on sale from 3 September 2026: https://www.tickettailor.com/checkout/view-event/id/8487726/chk/0db6
+- Live captioning: yes, sponsored by TetraLogical
+- Scholarships: inclusion scholarship programme: https://ffconf.org/scholarship
+- Organiser: Left Logic (https://leftlogic.com), contact events@leftlogic.com
+- Website: https://2026.ffconf.org/
+- Main FFConf site and past years: https://ffconf.org/
+
+## Speakers and talks
+
+- [Helen Brockelbank: Under one canvas: building a more inclusive browser game](https://2026.ffconf.org/#helen): the HTML canvas element leaves keyboard users, voice control users and others behind. Can a canvas browser game be built without excluding those players?
+- [Hidde de Vries: The future of the web is green](https://2026.ffconf.org/#hidde): the energy use of digital services, and what web developers can do about it using the W3C's Web Sustainability Guidelines.
+- [Cyd Stumpel: Prefers enhanced motion](https://2026.ffconf.org/#cyd): how to add motion and creative enhancements to websites responsibly, without making them harder to use.
+- [Niels Leenheer: CSS is DOOMed](https://2026.ffconf.org/#niels): recreating the game DOOM in CSS with thousands of 3D-transformed divs, CSS trigonometry, animations, filters and clipping paths, including network multiplayer.
+- [Deeksha Bhushan: Extra Hot Takes: Lessons on chaos, customers, and better systems from a chicken restaurant](https://2026.ffconf.org/#dee): what two years supervising a chicken restaurant taught about users and systems.
+- [Cennydd Bowles: Revenants](https://2026.ffconf.org/#cennydd): the web began as a utopian project, but whose utopia? The values in today's web and how to fight for alternatives.
+- [Lena Reinhard: We Were Meant To Be](https://2026.ffconf.org/#lena): after layoffs, AI hype and an industry that's hard to recognise, where do we go now?
+
+More speakers will be announced. The call for papers is open: https://ffconf.org/cfp
+
+## Schedule
+
+- 09:00 to 09:35: Registration
+- 09:35 to 09:50: Opening remarks
+- 11:10 to 11:40: Coffee break
+- 13:00 to 14:30: Lunch
+- 15:50 to 16:15: Ice cream break
+- 17:35 to 17:50: Closing remarks
+- 18:00 to 00:00: Social
+
+Talks fill the time between these breaks. Individual talk times will be published later.
+
+## Getting involved
+
+- [Buy tickets](https://www.tickettailor.com/checkout/view-event/id/8487726/chk/0db6)
+- [Apply for a scholarship](https://ffconf.org/scholarship)
+- [Apply to speak](https://ffconf.org/cfp)
+- [Sponsor FFConf](mailto:events@leftlogic.com): current sponsors are TetraLogical (captioning) and JS Bin (day sponsor)
+
+## Policies
+
+- [Venue accessibility](https://ffconf.org/accessibility)
+- [Inclusion statement](https://ffconf.org/inclusion)
+- [Code of conduct](https://ffconf.org/code-of-conduct/)
+- [COVID policy](https://ffconf.org/covid)
+- [Terms](https://ffconf.org/terms)
+- [Privacy](https://ffconf.org/privacy)
+- [Previous years](https://ffconf.org/history/)
