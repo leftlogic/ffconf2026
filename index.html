@@ -91,15 +91,25 @@
         { "@type": "Organization", "name": "JS Bin", "url": "https://jsbin.com/" }
       ],
       "performer": [
-        { "@type": "Person", "@id": "https://2026.ffconf.org/#helen", "name": "Helen Brockelbank", "sameAs": ["https://www.linkedin.com/in/helen-brockelbank-75250452/"] },
-        { "@type": "Person", "@id": "https://2026.ffconf.org/#hidde", "name": "Hidde de Vries", "url": "https://hidde.blog/", "sameAs": ["https://front-end.social/@hdv"] },
-        { "@type": "Person", "@id": "https://2026.ffconf.org/#cyd", "name": "Cyd Stumpel", "url": "https://cydstumpel.nl/", "sameAs": ["https://bsky.app/profile/cydstumpel.nl"] },
         { "@type": "Person", "@id": "https://2026.ffconf.org/#niels", "name": "Niels Leenheer", "url": "https://nielsleenheer.com/", "sameAs": ["https://bsky.app/profile/html5test.com"] },
+        { "@type": "Person", "@id": "https://2026.ffconf.org/#helen", "name": "Helen Brockelbank", "sameAs": ["https://www.linkedin.com/in/helen-brockelbank-75250452/"] },
+        { "@type": "Person", "@id": "https://2026.ffconf.org/#matthew", "name": "Matthew Somerville", "url": "https://dracos.co.uk/" },
+        { "@type": "Person", "@id": "https://2026.ffconf.org/#cyd", "name": "Cyd Stumpel", "url": "https://cydstumpel.nl/", "sameAs": ["https://bsky.app/profile/cydstumpel.nl"] },
         { "@type": "Person", "@id": "https://2026.ffconf.org/#dee", "name": "Deeksha Bhushan", "sameAs": ["https://www.linkedin.com/in/deeksha-bhushan/"] },
+        { "@type": "Person", "@id": "https://2026.ffconf.org/#hidde", "name": "Hidde de Vries", "url": "https://hidde.blog/", "sameAs": ["https://front-end.social/@hdv"] },
         { "@type": "Person", "@id": "https://2026.ffconf.org/#cennydd", "name": "Cennydd Bowles", "url": "https://cennydd.com/", "sameAs": ["https://www.linkedin.com/in/cennydd/"] },
         { "@type": "Person", "@id": "https://2026.ffconf.org/#lena", "name": "Lena Reinhard", "url": "https://lenareinhard.com/", "sameAs": ["https://bsky.app/profile/lenareinhard.com", "https://www.linkedin.com/in/lenareinhard/"] }
       ],
       "subEvent": [
+        {
+          "@type": "Event",
+          "name": "CSS is DOOMed",
+          "description": "Recreating the game DOOM in CSS using 3D transforms, trigonometry functions, animations, filters and clipping paths.",
+          "url": "https://2026.ffconf.org/#niels",
+          "startDate": "2026-11-13",
+          "location": { "@id": "https://2026.ffconf.org/#venue" },
+          "performer": { "@id": "https://2026.ffconf.org/#niels" }
+        },
         {
           "@type": "Event",
           "name": "Under one canvas: building a more inclusive browser game",
@@ -111,12 +121,12 @@
         },
         {
           "@type": "Event",
-          "name": "The future of the web is green",
-          "description": "The energy use of digital services and what web developers can do about it, drawing on the W3C's Web Sustainability Guidelines.",
-          "url": "https://2026.ffconf.org/#hidde",
+          "name": "The journey of a fast accessible web app: lessons from 25 years of traintimes.org.uk",
+          "description": "Twenty-five years of running traintimes.org.uk: why and how to build a live departure board and journey planner that is faster and more accessible than the official site.",
+          "url": "https://2026.ffconf.org/#matthew",
           "startDate": "2026-11-13",
           "location": { "@id": "https://2026.ffconf.org/#venue" },
-          "performer": { "@id": "https://2026.ffconf.org/#hidde" }
+          "performer": { "@id": "https://2026.ffconf.org/#matthew" }
         },
         {
           "@type": "Event",
@@ -129,21 +139,21 @@
         },
         {
           "@type": "Event",
-          "name": "CSS is DOOMed",
-          "description": "Recreating the game DOOM in CSS using 3D transforms, trigonometry functions, animations, filters and clipping paths.",
-          "url": "https://2026.ffconf.org/#niels",
-          "startDate": "2026-11-13",
-          "location": { "@id": "https://2026.ffconf.org/#venue" },
-          "performer": { "@id": "https://2026.ffconf.org/#niels" }
-        },
-        {
-          "@type": "Event",
           "name": "Extra Hot Takes: Lessons on chaos, customers, and better systems from a chicken restaurant",
           "description": "Lessons about users and systems learned from two years supervising a chicken restaurant.",
           "url": "https://2026.ffconf.org/#dee",
           "startDate": "2026-11-13",
           "location": { "@id": "https://2026.ffconf.org/#venue" },
           "performer": { "@id": "https://2026.ffconf.org/#dee" }
+        },
+        {
+          "@type": "Event",
+          "name": "The future of the web is green",
+          "description": "The energy use of digital services and what web developers can do about it, drawing on the W3C's Web Sustainability Guidelines.",
+          "url": "https://2026.ffconf.org/#hidde",
+          "startDate": "2026-11-13",
+          "location": { "@id": "https://2026.ffconf.org/#venue" },
+          "performer": { "@id": "https://2026.ffconf.org/#hidde" }
         },
         {
           "@type": "Event",
@@ -296,6 +306,25 @@
       <div class="inner">
         <h2 class="section-title">SPEAKERS</h2>
 
+        <article class="speaker-card" id="niels" data-id="niels">
+          <img class="speaker-headshot" src="images/speakers/neils.avif" alt="Niels Leenheer">
+          <div class="speaker-card-header">
+            <p class="speaker-name">Niels Leenheer</p>
+            <h3 class="speaker-title">CSS is DOOMed</h3>
+          </div>
+          <p class="speaker-bio">Let's take CSS where it has not gone before. What would happen if you
+            took the classic game DOOM and tried to recreate it in CSS? Every wall, floor, ceiling,
+            barrel, imp and fireball is a &lt;div&gt;. Thousands of them in total, all positioned in
+            3D space using CSS 3D transforms that will almost bring browsers to their knees. Sprinkle
+            on a good dose of CSS trigonometry functions, animations, filters, clipping paths,
+            animations and transitions… and a bit of JavaScript too, and you'll get a fully playable
+            game - even with network multiplayer support.</p>
+          <div class="speaker-socials">
+            <a href="https://bsky.app/profile/html5test.com">Bluesky</a>
+            <a href="https://nielsleenheer.com/">Web site</a>
+          </div>
+        </article>
+
         <article class="speaker-card" id="helen" data-id="helen">
           <img class="speaker-headshot" src="images/speakers/helen.avif" alt="Helen Brockelbank ">
           <div class="speaker-card-header">
@@ -310,23 +339,18 @@
           </div>
         </article>
 
-
-        <article class="speaker-card" id="hidde" data-id="hidde">
-          <img class="speaker-headshot" src="images/speakers/hidde.avif" alt="Hidde de Vries">
+        <article class="speaker-card" id="matthew" data-id="matthew">
+          <img class="speaker-headshot" src="images/speakers/matthew.avif" alt="Matthew Somerville">
           <div class="speaker-card-header">
-            <p class="speaker-name">Hidde de Vries</p>
-            <h3 class="speaker-title">The future of the web is green</h3>
+            <p class="speaker-name">Matthew Somerville</p>
+            <h3 class="speaker-title">The journey of a fast accessible web app: lessons from 25 years of
+              traintimes.org.uk</h3>
           </div>
-          <p class="speaker-bio">The tech sector has an elephant in the room: the energy use of digital services can be
-            enormous. In 2024, the World Bank estimated the internet to account for 1-4% of global greenhouse emissions,
-            similar to aviation. The good news is: there are documented and measurable opportunities to improve. From
-            code to infrastructure. As web developers, we can make the web greener at work.</p>
-          <p class="speaker-bio">
-            In this talk, we'll look at best practices from the W3C's new Web Sustainability Guidelines and beyond,
-            focusing on lessons you can apply today.</p>
+          <p class="speaker-bio">I've been running traintimes.org.uk since 2001, providing live departure boards and
+            journey planning faster than the official site, and in this talk I will show you why and how, and why you
+            should care?</p>
           <div class="speaker-socials">
-            <a href="https://front-end.social/@hdv">Mastodon</a>
-            <a href="https://hidde.blog/">Web site</a>
+            <a href="https://dracos.co.uk/">Website</a>
           </div>
         </article>
 
@@ -352,29 +376,6 @@
           </div>
         </article>
 
-
-
-        <article class="speaker-card" id="niels" data-id="niels">
-          <img class="speaker-headshot" src="images/speakers/neils.avif" alt="Niels Leenheer">
-          <div class="speaker-card-header">
-            <p class="speaker-name">Niels Leenheer</p>
-            <h3 class="speaker-title">CSS is DOOMed</h3>
-          </div>
-          <p class="speaker-bio">Let's take CSS where it has not gone before. What would happen if you
-            took the classic game DOOM and tried to recreate it in CSS? Every wall, floor, ceiling,
-            barrel, imp and fireball is a &lt;div&gt;. Thousands of them in total, all positioned in
-            3D space using CSS 3D transforms that will almost bring browsers to their knees. Sprinkle
-            on a good dose of CSS trigonometry functions, animations, filters, clipping paths,
-            animations and transitions… and a bit of JavaScript too, and you'll get a fully playable
-            game - even with network multiplayer support.</p>
-          <div class="speaker-socials">
-            <a href="https://bsky.app/profile/html5test.com">Bluesky</a>
-            <a href="https://nielsleenheer.com/">Web site</a>
-          </div>
-        </article>
-
-
-
         <article class="speaker-card" id="dee" data-id="dee">
           <img class="speaker-headshot" src="images/speakers/dee.avif" alt="Deeksha Bhushan">
           <div class="speaker-card-header">
@@ -390,6 +391,25 @@
             <!-- <a href="https://www.deekshabhushan.com/">Web site</a> -->
           </div>
 
+        </article>
+
+        <article class="speaker-card" id="hidde" data-id="hidde">
+          <img class="speaker-headshot" src="images/speakers/hidde.avif" alt="Hidde de Vries">
+          <div class="speaker-card-header">
+            <p class="speaker-name">Hidde de Vries</p>
+            <h3 class="speaker-title">The future of the web is green</h3>
+          </div>
+          <p class="speaker-bio">The tech sector has an elephant in the room: the energy use of digital services can be
+            enormous. In 2024, the World Bank estimated the internet to account for 1-4% of global greenhouse emissions,
+            similar to aviation. The good news is: there are documented and measurable opportunities to improve. From
+            code to infrastructure. As web developers, we can make the web greener at work.</p>
+          <p class="speaker-bio">
+            In this talk, we'll look at best practices from the W3C's new Web Sustainability Guidelines and beyond,
+            focusing on lessons you can apply today.</p>
+          <div class="speaker-socials">
+            <a href="https://front-end.social/@hdv">Mastodon</a>
+            <a href="https://hidde.blog/">Web site</a>
+          </div>
         </article>
 
         <article class="speaker-card" id="cennydd" data-id="cennydd">
@@ -425,7 +445,7 @@
           </div>
         </article>
 
-        <article class="speaker-card" id="next" data-id="next">
+        <article hidden class="speaker-card" id="next" data-id="next">
           <img class="speaker-headshot" src="images/speakers/who2.avif" alt="Who's next?">
           <div class="speaker-card-header">
             <p class="speaker-name">Maybe you?</p>
