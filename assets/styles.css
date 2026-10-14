@@ -1209,8 +1209,9 @@ when-do[do='hide'] {
   display: none;
 }
 
-.hero-keyinfo span {
+.hero-keyinfo a {
   color: #ff9d9d;
+  text-decoration-thickness: 4px;
 }
 
 .wide {
