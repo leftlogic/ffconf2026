@@ -1209,6 +1209,10 @@ when-do[do='hide'] {
   display: none;
 }
 
+.hero-keyinfo span {
+  color: #ff9d9d;
+}
+
 .wide {
   display: none;
 
