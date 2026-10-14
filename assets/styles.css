@@ -1211,7 +1211,16 @@ when-do[do='hide'] {
 
 .hero-keyinfo a {
   color: #ff9d9d;
+  text-underline-offset: 4px;
   text-decoration-thickness: 4px;
+  transition:
+    color 50ms ease,
+    text-underline-offset 50ms ease;
+
+  &:hover {
+    text-underline-offset: 6px;
+    color: #ff6b6b;
+  }
 }
 
 .wide {
